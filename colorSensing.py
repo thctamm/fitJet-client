@@ -39,7 +39,7 @@ class ColorSensing():
         x, y, w, h = (0, 0, 0, 0) 
         # Get contours
         img_gray = cv2.cvtColor(masked_img, cv2.COLOR_BGR2GRAY)
-        contours, _ = cv2.findContours(img_gray, cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)
+        _, contours, _ = cv2.findContours(img_gray, cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)
         if len(contours) > 0:
             # Find the largest contour
             areas = [cv2.contourArea(c) for c in contours]
